@@ -54,16 +54,7 @@ public class IndoorsActivity extends AppCompatActivity implements IndoorsLocatio
         surfaceBuilder.setIndoorsBuilder(indoorsBuilder);
 
         //ToDo: Build indoors-Fragment in own thread - Slow operation!
-        /*if (ContextCompat.checkSelfPermission(this,
-                Manifest.permission.WRITE_EXTERNAL_STORAGE)
-                != PackageManager.PERMISSION_GRANTED) {*/
-            ActivityCompat.requestPermissions(this,
-                    new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE},
-                    22);
-        //}
-
-
-            indoorsFragment                 = surfaceBuilder.build();
+        indoorsFragment                 = surfaceBuilder.build();
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
         transaction.add(R.id.indoors_layout, indoorsFragment, "indoors");
         transaction.commit();
